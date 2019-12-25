@@ -1,0 +1,46 @@
+$ cargo build --release &>/dev/null
+$ ./extra/stat.sh 
+
+chan(2) sum = 999999000000
+chan 303.178501ms
+
+ Performance counter stats for './target/release/ring':
+
+               100      sched:sched_wakeup                                          
+                80      sched:sched_switch                                          
+       262,202,832      L1-dcache-loads                                               (61.75%)
+        19,778,973      L1-dcache-load-misses     #    7.54% of all L1-dcache hits    (49.88%)
+       166,787,953      L1-dcache-stores                                              (27.40%)
+        18,280,175      cache-references                                              (30.88%)
+           329,036      cache-misses              #    1.800 % of all cache refs      (27.70%)
+     2,161,485,714      cycles                                                        (39.87%)
+     1,013,163,035      instructions              #    0.47  insn per cycle           (51.82%)
+       214,217,372      branches                                                      (62.10%)
+             6,838      faults                                                      
+                 0      migrations                                                  
+
+       0.307043924 seconds time elapsed
+
+ring(2) sum = 999999000000
+ring 273.638885ms
+
+ Performance counter stats for './target/release/ring':
+
+                28      sched:sched_wakeup                                          
+                 3      sched:sched_switch                                          
+        63,919,047      L1-dcache-loads                                               (55.30%)
+        27,351,675      L1-dcache-load-misses     #   42.79% of all L1-dcache hits    (54.16%)
+        16,806,154      L1-dcache-stores                                              (27.63%)
+        25,570,731      cache-references                                              (28.03%)
+               630      cache-misses              #    0.002 % of all cache refs      (26.34%)
+     2,167,058,119      cycles                                                        (38.67%)
+       204,649,124      instructions              #    0.09  insn per cycle           (50.38%)
+        57,452,356      branches                                                      (62.08%)
+                85      faults                                                      
+                 0      migrations                                                  
+
+       0.275242656 seconds time elapsed
+
+
+
+

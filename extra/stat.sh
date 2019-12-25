@@ -1,0 +1,1 @@
+perf stat -B -e sched:sched_wakeup,sched:sched_switch,L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores,cache-references,cache-misses,cycles,instructions,branches,faults,migrations ./target/release/ring
