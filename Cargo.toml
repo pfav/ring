@@ -1,0 +1,7 @@
+[package]
+name = "ring"
+version = "0.1.0"
+authors = ["pfav <papito.favaro@gmail.com>"]
+edition = "2018"
+
+[dependencies]
